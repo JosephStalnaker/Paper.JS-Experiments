@@ -22,25 +22,86 @@
 //   path.strokeColor = 'black';
 // }
 
-for (var x = 0; x < 10; x++) {
-  for (var y = 0; y < 10; y++) {
-    var row = y * 100;
-    var center = new Point(50 + x * 100, row);
-    var path = new Path.Circle(center, 10);
-    path.fillColor = 'red';
-    path.strokeColor = 'black';
-  }
+// for (var x = 0; x < 10; x++) {
+//   for (var y = 0; y < 10; y++) {
+//     var row = y * 100;
+//     var center = new Point(50 + x * 100, row);
+//     var path = new Path.Circle(center, 10);
+//     path.fillColor = 'red';
+//     path.strokeColor = 'black';
+//   }
+// }
+
+// // Save a reference to the children array in a variable,
+// // so we don't end up with very long lines of code:
+// var children = project.activeLayer.children;
+
+// // Iterate through the items contained within the array:
+// for (var i = 0; i < children.length; i++) {
+//   var child = children[i];
+
+//   // Change the fill color of the child to a random
+//   // value between 0 and 360:
+//   child.fillColor.hue = Math.random() * 360;
+// }
+
+var path = new Path.Rectangle({
+  point: [75, 75],
+  size: [75, 75],
+  strokeColor: 'red',
+});
+
+var path2 = new Path.Rectangle({
+  point: [150, 150],
+  size: [35, 35],
+  strokeColor: 'red',
+});
+
+// function onFrame(event) {
+//   // Each frame, rotate the path by 3 degrees:
+//   path.rotate(3);
+//   path2.rotate(1);
+
+var text = new PointText(new Point(100, 100));
+text.content = 'COLLECTed';
+text.opacity = 0.5;
+text.strokeColor = 'red';
+text.fillColor = 'white';
+text.fontSize = 40;
+
+var text3 = new PointText(new Point(358, 358));
+text3.content = 'COLLECTed';
+text3.strokeColor = '#C0C0C0';
+text3.strokeWidth = 1;
+text3.fillColor = 'white';
+text3.fontSize = 85;
+
+var text = new PointText(new Point(359, 359));
+text.content = 'COLLECTed';
+text.strokeColor = '#757575';
+text3.strokeWidth = 2;
+text.fillColor = 'white';
+text.fontSize = 84;
+
+var text2 = new PointText(new Point(360, 360));
+text2.content = 'COLLECTed';
+text2.strokeColor = 'black';
+text2.strokeWidth = 2;
+text2.fillColor = 'white';
+text2.fontSize = 83;
+
+function onFrame(event) {
+  text.rotate(1);
+  //   if (text.opacity < 1) {
+  //     text.opacity += 0.2;
+  //   }
+  // Each frame, rotate the path by 3 degrees:
+  path.rotate(3);
+  path2.rotate(1);
+  text2.rotate(1);
+  text3.rotate(1);
 }
 
-// Save a reference to the children array in a variable,
-// so we don't end up with very long lines of code:
-var children = project.activeLayer.children;
-
-// Iterate through the items contained within the array:
-for (var i = 0; i < children.length; i++) {
-  var child = children[i];
-
-  // Change the fill color of the child to a random
-  // value between 0 and 360:
-  child.fillColor.hue = Math.random() * 360;
+function onKeyDown(event) {
+  var text = new PointText();
 }
